@@ -24,6 +24,11 @@ public class Evento {
     public Evento() {
     }
 
+    public Evento(String nombre) {
+        this.nombre = nombre;
+    }
+    
+
     public Evento(String nombre, String lugar, String fecha, String horai, String horaf, int asis) {
         this.nombre = nombre;
         this.lugar = lugar;

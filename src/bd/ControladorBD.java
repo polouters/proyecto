@@ -21,6 +21,20 @@ public class ControladorBD {
       db.store(ev);
       db.close();
       JOptionPane.showMessageDialog(null,"Evento dado de alta con exito");
-  }  
+  } 
+  public static void bajaEvento(String nombre){
+      ObjectContainer db=Db4o.openFile("EjerEventos");
+      ObjectSet result=db.queryByExample(new Evento(nombre));
+      Evento found=(Evento)result.next();
+     
+      if(JOptionPane.showConfirmDialog(null,"Esta seguro que desea dar de baja"
+             + "este evento: \n"+found.getNombre()+" \n"+found.getLugar()+""
+             + "\n"+found.getHorai()+"\n"+found.getHoraf()+"\n"+found.getFecha())==0) {
+      db.delete(found);
+      }else{
+          JOptionPane.showMessageDialog(null,"Se a producido un error");
+      }
+     
+  }
     
 }

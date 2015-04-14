@@ -37,6 +37,9 @@ public class Controlador {
     public static void añadirEventoBD(Evento e){
         ControladorBD.altaEvento(e);
     }
+    public static void bajaBD(String nombre){
+        ControladorBD.bajaEvento(nombre);
+    }
     // abir ventanas
     public static void abrir_alta(){
         v1.dispose();
