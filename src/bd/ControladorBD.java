@@ -13,7 +13,8 @@ import com.db4o.*;
  */
 public class ControladorBD {
   public static void altaEvento(){
-  ObjectContainer db=Db4o.openFile("EjerEventos");
+  // creamos la base de datos orientada a objetos
+      ObjectContainer db=Db4o.openFile("EjerEventos");
 
   }  
     
