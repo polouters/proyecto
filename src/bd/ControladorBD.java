@@ -20,7 +20,7 @@ public class ControladorBD {
       ObjectContainer db=Db4o.openFile("EjerEventos");
       db.store(ev);
       db.close();
-      JOptionPane.showMessageDialog(null,"Evento dado de alta con exito");
+       System.out.print("finalizado con exito");
   } 
   public static void bajaEvento(String nombre){
       ObjectContainer db=Db4o.openFile("EjerEventos");
@@ -31,6 +31,7 @@ public class ControladorBD {
              + "este evento: \n"+found.getNombre()+" \n"+found.getLugar()+""
              + "\n"+found.getHorai()+"\n"+found.getHoraf()+"\n"+found.getFecha())==0) {
       db.delete(found);
+      System.out.print("finalizado con exito");
       }else{
           JOptionPane.showMessageDialog(null,"Se a producido un error");
       }

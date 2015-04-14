@@ -282,7 +282,7 @@ public class principal extends javax.swing.JFrame {
     private void bajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bajaActionPerformed
         try {
             String nombre = JOptionPane.showInputDialog("Que evento desea eliminar?");
-            
+            Controlador.Controlador.bajaBD(nombre);
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Se a producido un error" + ex);
         }
