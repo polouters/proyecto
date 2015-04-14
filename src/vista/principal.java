@@ -77,7 +77,6 @@ public class principal extends javax.swing.JFrame {
             }
         });
 
-        modificacion.setForeground(new java.awt.Color(255, 51, 51));
         modificacion.setText("Modificacion");
         modificacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -5,6 +5,9 @@
  */
 package vista;
 
+import java.util.ArrayList;
+import uml.Evento;
+
 /**
  *
  * @author Ruben
@@ -17,6 +20,11 @@ public class Ventana3 extends javax.swing.JFrame {
     public Ventana3() {
         initComponents();
         setLocationRelativeTo(null);
+    }
+    public Ventana3(ArrayList<Evento> Listado){
+        initComponents();
+        setLocationRelativeTo(null);
+        
     }
 
     /**

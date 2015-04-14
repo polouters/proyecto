@@ -48,6 +48,7 @@ public class ControladorBD {
   found = ev;
   db.store(ev);
   db.close();
+  System.out.println("finalizado con exito");
   }
     
 }
