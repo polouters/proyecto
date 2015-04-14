@@ -35,9 +35,19 @@ public class ControladorBD {
      }
   }
   
-  public static void modificacionEventos(){
-  
-  
+  public static void modificacionEventos(String nombre){
+  ObjectContainer db=Db4o.openFile("EjerEventos");
+  ObjectSet result=db.queryByExample(new Evento(nombre));
+  Evento found=(Evento)result.next();
+  db.close();
+  }
+  public static void modificacionEv(Evento ev){
+  ObjectContainer db=Db4o.openFile("EjerEventos");
+  ObjectSet result=db.queryByExample(new Evento(ev.getNombre()));
+  Evento found=(Evento)result.next();
+  found = ev;
+  db.store(ev);
+  db.close();
   }
     
 }

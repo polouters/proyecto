@@ -290,8 +290,8 @@ public class principal extends javax.swing.JFrame {
 
     private void modificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificacionActionPerformed
         try {
-            // TODO add your handling code here:
-            //Controlador.Controlador.abrir_modifi(
+             String nombre = JOptionPane.showInputDialog("Que evento desea modificar?");
+            Controlador.Controlador.modificarBD(nombre);
         } catch (Exception ex) {
             Logger.getLogger(principal.class.getName()).log(Level.SEVERE, null, ex);
         }

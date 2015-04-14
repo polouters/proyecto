@@ -97,9 +97,11 @@ public class modificacion extends javax.swing.JFrame {
             }
         });
 
+        nombre.setEnabled(false);
+
         asistentes.setModel(new javax.swing.SpinnerNumberModel(Integer.valueOf(0), Integer.valueOf(0), null, Integer.valueOf(1)));
 
-        fecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("yyyy-MM-dd"))));
+        fecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
 
         hora_inicio.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getTimeInstance(java.text.DateFormat.MEDIUM))));
 
@@ -207,6 +209,7 @@ public class modificacion extends javax.swing.JFrame {
         e.setAsis((Integer)asistentes.getValue());
         
        // linea de ejecucion
+        Controlador.Controlador.cerrarModifi(e);
         
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null, "error"+ ex);

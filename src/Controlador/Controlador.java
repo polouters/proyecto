@@ -50,7 +50,21 @@ public class Controlador {
       return false;
       }
     }
-    // abir ventanas
+    public static void modificarBD(String nombre){
+    ControladorBD.modificacionEventos(nombre);
+    }
+    public static void abrirModifi(Evento ev){
+    v5 = new modificacion(ev);
+    v5.setVisible(true);
+    }
+    public static void cerrarModifi(Evento ev){
+        v1= new principal();
+        v1.setVisible(true);
+        v5.dispose();
+        ControladorBD.modificacionEv(ev);
+    }
+// abir ventanas
+    
     public static void abrir_alta(){
         v1.dispose();
         v2 = new Ventana1();
