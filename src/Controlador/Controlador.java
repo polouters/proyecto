@@ -7,6 +7,7 @@ package Controlador;
 
 
 
+import bd.ControladorBD;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import uml.Evento;
@@ -31,6 +32,10 @@ public class Controlador {
         // TODO code application logic here
         v1.setVisible(true);
         
+    }
+    // diversas ejecuciones
+    public static void añadirEventoBD(Evento e){
+        ControladorBD.altaEvento(e);
     }
     // abir ventanas
     public static void abrir_alta(){

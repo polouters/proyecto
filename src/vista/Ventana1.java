@@ -196,7 +196,7 @@ public class Ventana1 extends javax.swing.JFrame {
         e.setAsis((Integer)asistentes.getValue());
         
         // Falta linea de ejecicion
-        
+        Controlador.Controlador.añadirEventoBD(e);
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null, "error"+ ex);
         }
