@@ -70,7 +70,6 @@ public class principal extends javax.swing.JFrame {
             }
         });
 
-        baja.setForeground(new java.awt.Color(255, 0, 0));
         baja.setText("Baja");
         baja.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

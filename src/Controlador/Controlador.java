@@ -40,6 +40,16 @@ public class Controlador {
     public static void bajaBD(String nombre){
         ControladorBD.bajaEvento(nombre);
     }
+    public static boolean confirmarBaja(Evento found){
+    if(JOptionPane.showConfirmDialog(null,"Esta seguro que desea dar de baja"
+             + "este evento: \n"+found.getNombre()+" \n"+found.getLugar()+""
+             + "\n"+found.getHorai()+"\n"+found.getHoraf()+"\n"+found.getFecha())==0) {
+      return true;
+      
+      }else{
+      return false;
+      }
+    }
     // abir ventanas
     public static void abrir_alta(){
         v1.dispose();

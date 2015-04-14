@@ -26,16 +26,13 @@ public class ControladorBD {
       ObjectContainer db=Db4o.openFile("EjerEventos");
       ObjectSet result=db.queryByExample(new Evento(nombre));
       Evento found=(Evento)result.next();
-     
-      if(JOptionPane.showConfirmDialog(null,"Esta seguro que desea dar de baja"
-             + "este evento: \n"+found.getNombre()+" \n"+found.getLugar()+""
-             + "\n"+found.getHorai()+"\n"+found.getHoraf()+"\n"+found.getFecha())==0) {
+     if(Controlador.Controlador.confirmarBaja(found)==true){
       db.delete(found);
-      System.out.print("finalizado con exito");
-      }else{
-          JOptionPane.showMessageDialog(null,"Se a producido un error");
-      }
      
+      System.out.println("finalizado con exito");
+     }else{
+     System.out.println("Se a producido un error, o no a querido elimanar");
+     }
   }
     
 }
