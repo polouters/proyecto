@@ -20,24 +20,26 @@ public class ControladorBD {
   public static boolean altaEvento(Evento ev){
   // creamos la base de datos orientada a objeto
      //rebision pre alta
-      ObjectContainer db=Db4o.openFile("EjerEvento");
+      ObjectContainer db=Db4o.openFile("EjerEvente");
       ObjectSet result=db.queryByExample(new Evento(ev.getNombre()));
+      
       if(result.hasNext()){
-      db.close();
       return false;
-      }else{
-      //alta
-      ObjectContainer dd=Db4o.openFile("EjerEvento");
-      dd.store(ev);
-      dd.close();
-      System.out.print("finalizado con exito");
+      }else
       return true;
-      }
+      
     
       
   } 
+  public static void alta(Evento ev){
+  //alta
+      ObjectContainer db=Db4o.openFile("EjerEvente");
+      db.store(ev);
+      db.close();
+      System.out.print("finalizado con exito");
+  }
   public static void bajaEvento(String nombre){
-      ObjectContainer db=Db4o.openFile("EjerEvento");
+      ObjectContainer db=Db4o.openFile("EjerEvente");
       ObjectSet result=db.queryByExample(new Evento(nombre));
       Evento found=(Evento)result.next();
      if(Controlador.Controlador.confirmarBaja(found)==true){
@@ -50,14 +52,14 @@ public class ControladorBD {
   }
   
   public static void modificacionEventos(String nombre){
-  ObjectContainer db=Db4o.openFile("EjerEvento");
+  ObjectContainer db=Db4o.openFile("EjerEvente");
   ObjectSet result=db.queryByExample(new Evento(nombre));
   Evento found=(Evento)result.next();
   db.close();
   Controlador.Controlador.abrirModifi(found);
   }
   public static void modificacionEv(Evento ev){
-  ObjectContainer db=Db4o.openFile("EjerEvento");
+  ObjectContainer db=Db4o.openFile("EjerEvente");
   ObjectSet result=db.queryByExample(new Evento(ev.getNombre()));
   Evento found=(Evento)result.next();
    db.delete(found);
@@ -69,7 +71,7 @@ public class ControladorBD {
   public static ArrayList<Evento> generarListado() {
         ArrayList<Evento>Listado= new ArrayList(); 
          
-        ObjectContainer db=Db4o.openFile("EjerEvento");
+        ObjectContainer db=Db4o.openFile("EjerEvente");
         
          Query query = db.query();
          query.constrain(Evento.class);
@@ -82,7 +84,7 @@ public class ControladorBD {
        
     }
   public static Evento listadoRellenar(String nombre){
-  ObjectContainer db=Db4o.openFile("EjerEvento");
+  ObjectContainer db=Db4o.openFile("EjerEvente");
   ObjectSet result=db.queryByExample(new Evento(nombre));
   Evento found=(Evento)result.next();
   db.close();

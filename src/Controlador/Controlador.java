@@ -35,11 +35,14 @@ public class Controlador {
     }
     // diversas ejecuciones
     public static void añadirEventoBD(Evento e){
-     boolean si=   ControladorBD.altaEvento(e);
-     if (si== false)
+     boolean si =true;
+     si = ControladorBD.altaEvento(e);
+     if (si== false){
          JOptionPane.showMessageDialog(null,"El nombre ya esta utilizado para un evento");
-    else
+     } else{ 
+         ControladorBD.alta(e);
          JOptionPane.showMessageDialog(null,"Dado de alta con exito");
+    }
 }
     public static void bajaBD(String nombre){
         ControladorBD.bajaEvento(nombre);
