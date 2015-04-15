@@ -64,6 +64,14 @@ public class Controlador {
         v5.dispose();
         ControladorBD.modificacionEv(ev);
     }
+    public static String llenarArea(String select){
+    String texto ="El evento tiene la siguinte informacion: \n";
+    Evento ev = ControladorBD.listadoRellenar(select);
+    texto= texto + ev.getNombre() +"\n" + ev.getLugar() +"\n" + ev.getHorai()+ ""
+            + "\n"+ ev.getHoraf() + "\n"+ev.getFecha()+"\n";
+    
+        return texto;
+    }
 // abir ventanas
     
     public static void abrir_alta(){

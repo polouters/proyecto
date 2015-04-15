@@ -24,8 +24,9 @@ public class Ventana3 extends javax.swing.JFrame {
     public Ventana3(ArrayList<Evento> Listado){
         initComponents();
         setLocationRelativeTo(null);
-       for(int x=0;x<=Listado.size();x++){
-        listaEventos.addItem(Listado.get(x).getNombre().toString());
+       for(int x=0;x<Listado.size();x++){
+           String nombre= Listado.get(x).getNombre().toString();
+       listaEventos.addItem(nombre);
        }
     }
 
@@ -46,6 +47,11 @@ public class Ventana3 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         listaEventos.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione un evento" }));
+        listaEventos.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                listaEventosItemStateChanged(evt);
+            }
+        });
 
         salir.setText("atras");
         salir.addActionListener(new java.awt.event.ActionListener() {
@@ -54,6 +60,7 @@ public class Ventana3 extends javax.swing.JFrame {
             }
         });
 
+        area.setEnabled(false);
         jScrollPane2.setViewportView(area);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -95,6 +102,12 @@ public class Ventana3 extends javax.swing.JFrame {
         // TODO add your handling code here:
         Controlador.Controlador.atras_listado();
     }//GEN-LAST:event_salirActionPerformed
+
+    private void listaEventosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_listaEventosItemStateChanged
+        // TODO add your handling code here:
+        String select = listaEventos.getSelectedItem().toString();
+        area.setText(Controlador.Controlador.llenarArea(select));
+    }//GEN-LAST:event_listaEventosItemStateChanged
 
     /**
      * @param args the command line arguments
