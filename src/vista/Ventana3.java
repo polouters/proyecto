@@ -105,8 +105,13 @@ public class Ventana3 extends javax.swing.JFrame {
 
     private void listaEventosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_listaEventosItemStateChanged
         // TODO add your handling code here:
+       try{
         String select = listaEventos.getSelectedItem().toString();
         area.setText(Controlador.Controlador.llenarArea(select));
+       }catch(Exception e){
+       System.out.println("Tranquilo no a sido nada");
+       }
+       
     }//GEN-LAST:event_listaEventosItemStateChanged
 
     /**
