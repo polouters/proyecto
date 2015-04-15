@@ -6,6 +6,8 @@
 package bd;
 
 import com.db4o.*;
+import com.db4o.query.Query;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import uml.*;
 
@@ -51,5 +53,19 @@ public class ControladorBD {
   db.close();
   System.out.println("finalizado con exito");
   }
+
+    public static ArrayList<Evento> generarListado() {
+        ArrayList<Evento>Listado= new ArrayList(); 
+         ObjectContainer db=Db4o.openFile("EjerEventos");
+         Query query = db.query();
+         query.constrain(Evento.class);
+         ObjectSet result = query.execute();
+         while(result.hasNext()){
+         Evento found=(Evento)result.next();
+         Listado.add(found);
+         }
+         return Listado;
+       
+    }
     
 }

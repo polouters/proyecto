@@ -77,7 +77,8 @@ public class Controlador {
         v3.setVisible(true);
     }public static void abrir_listado(){
         v1.dispose();
-        v4 = new Ventana3();
+        ArrayList<Evento> Listado= ControladorBD.generarListado();
+        v4 = new Ventana3(Listado);
         v4.setVisible(true);
     }
     

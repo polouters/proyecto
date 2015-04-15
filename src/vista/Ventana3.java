@@ -24,7 +24,9 @@ public class Ventana3 extends javax.swing.JFrame {
     public Ventana3(ArrayList<Evento> Listado){
         initComponents();
         setLocationRelativeTo(null);
-        
+       for(int x=0;x<=Listado.size();x++){
+        listaEventos.addItem(Listado.get(x).getNombre().toString());
+       }
     }
 
     /**
