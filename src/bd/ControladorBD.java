@@ -40,12 +40,13 @@ public class ControladorBD {
   ObjectSet result=db.queryByExample(new Evento(nombre));
   Evento found=(Evento)result.next();
   db.close();
+  Controlador.Controlador.abrirModifi(found);
   }
   public static void modificacionEv(Evento ev){
   ObjectContainer db=Db4o.openFile("EjerEventos");
   ObjectSet result=db.queryByExample(new Evento(ev.getNombre()));
   Evento found=(Evento)result.next();
-  found = ev;
+   db.delete(found);
   db.store(ev);
   db.close();
   System.out.println("finalizado con exito");

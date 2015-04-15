@@ -52,6 +52,7 @@ public class Controlador {
     }
     public static void modificarBD(String nombre){
     ControladorBD.modificacionEventos(nombre);
+   
     }
     public static void abrirModifi(Evento ev){
     v5 = new modificacion(ev);
