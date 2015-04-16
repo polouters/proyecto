@@ -177,31 +177,31 @@ public class Ventana1 extends javax.swing.JFrame {
     private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
         // TODO add your handling code here:
         Controlador.Controlador.atras_alta();
-        
+
     }//GEN-LAST:event_salirActionPerformed
 
     private void altaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaActionPerformed
         // TODO add your handling code here:
-        try{
-        Evento e = new Evento();
-        
-        e.setNombre(nombre.getText());
-        e.setLugar(lugar.getText());
-      
-        e.setFecha(fecha.getText());
-       
-        e.setHorai(hora_inicio.getText());
-        
-        e.setHoraf(hora_fin.getText());
-        e.setAsis((Integer)asistentes.getValue());
-        
-        // Falta linea de ejecicion
-        Controlador.Controlador.añadirEventoBD(e);
-        }catch(Exception ex){
-            JOptionPane.showMessageDialog(null, "error"+ ex);
+        try {
+            Evento e = new Evento();
+
+            e.setNombre(nombre.getText());
+            e.setLugar(lugar.getText());
+
+            e.setFecha(fecha.getText());
+
+            e.setHorai(hora_inicio.getText());
+
+            e.setHoraf(hora_fin.getText());
+            e.setAsis((Integer) asistentes.getValue());
+
+            // Falta linea de ejecicion
+            Controlador.Controlador.añadirEventoBD(e);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "error" + ex);
         }
-        
-        
+
+
     }//GEN-LAST:event_altaActionPerformed
 
     /**

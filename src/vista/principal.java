@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vista; 
+package vista;
 
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -22,7 +22,7 @@ public class principal extends javax.swing.JFrame {
     public principal() {
         initComponents();
         setLocationRelativeTo(null);
-        
+
     }
 
     /**
@@ -246,7 +246,7 @@ public class principal extends javax.swing.JFrame {
     private void altaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaActionPerformed
         // TODO add your handling code here:
         Controlador.Controlador.abrir_alta();
-        
+
     }//GEN-LAST:event_altaActionPerformed
 
     private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
@@ -260,10 +260,10 @@ public class principal extends javax.swing.JFrame {
     }//GEN-LAST:event_listadoActionPerformed
 
     private void alta_asisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alta_asisActionPerformed
-        
-            // TODO add your handling code here:
-            Controlador.Controlador.abrir_altaPersona();
-        
+
+        // TODO add your handling code here:
+        Controlador.Controlador.abrir_altaPersona();
+
     }//GEN-LAST:event_alta_asisActionPerformed
 
     private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
@@ -283,12 +283,12 @@ public class principal extends javax.swing.JFrame {
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Se a producido un error" + ex);
         }
-        
+
     }//GEN-LAST:event_bajaActionPerformed
 
     private void modificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificacionActionPerformed
         try {
-             String nombre = JOptionPane.showInputDialog("Que evento desea modificar?");
+            String nombre = JOptionPane.showInputDialog("Que evento desea modificar?");
             Controlador.Controlador.modificarBD(nombre);
         } catch (Exception ex) {
             Logger.getLogger(principal.class.getName()).log(Level.SEVERE, null, ex);

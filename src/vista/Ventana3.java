@@ -21,13 +21,14 @@ public class Ventana3 extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
     }
-    public Ventana3(ArrayList<Evento> Listado){
+
+    public Ventana3(ArrayList<Evento> Listado) {
         initComponents();
         setLocationRelativeTo(null);
-       for(int x=0;x<Listado.size();x++){
-           String nombre= Listado.get(x).getNombre().toString();
-       listaEventos.addItem(nombre);
-       }
+        for (int x = 0; x < Listado.size(); x++) {
+            String nombre = Listado.get(x).getNombre().toString();
+            listaEventos.addItem(nombre);
+        }
     }
 
     /**
@@ -105,13 +106,13 @@ public class Ventana3 extends javax.swing.JFrame {
 
     private void listaEventosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_listaEventosItemStateChanged
         // TODO add your handling code here:
-       try{
-        String select = listaEventos.getSelectedItem().toString();
-        area.setText(Controlador.Controlador.llenarArea(select));
-       }catch(Exception e){
-       System.out.println("Tranquilo no a sido nada");
-       }
-       
+        try {
+            String select = listaEventos.getSelectedItem().toString();
+            area.setText(Controlador.Controlador.llenarArea(select));
+        } catch (Exception e) {
+            System.out.println("Tranquilo no a sido nada");
+        }
+
     }//GEN-LAST:event_listaEventosItemStateChanged
 
     /**

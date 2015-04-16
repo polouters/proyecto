@@ -10,12 +10,12 @@ package uml;
  * @author Ruben
  */
 public class Persona {
+
     private String dni;
     private String nombre;
     private String apellido1;
     private String apellido2;
     private String telefono;
-    
 
     public Persona() {
     }
@@ -26,7 +26,7 @@ public class Persona {
         this.apellido1 = apellido1;
         this.apellido2 = apellido2;
         this.telefono = telefono;
-       
+
     }
 
     public String getDni() {
@@ -69,11 +69,4 @@ public class Persona {
         this.telefono = telefono;
     }
 
-    
-    
-    
-    
-    
-    
-    
 }
