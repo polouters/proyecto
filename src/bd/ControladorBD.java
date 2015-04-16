@@ -21,11 +21,14 @@ public class ControladorBD {
   // creamos la base de datos orientada a objeto
      //rebision pre alta
       ObjectContainer db=Db4o.openFile("EjerEvente");
-      ObjectSet result=db.queryByExample(new Evento(ev.getNombre()));
-      
-      if(result.hasNext()){
+      Evento e = new Evento(ev.getNombre());
+      ObjectSet result=db.queryByExample(e);
+      System.out.print(result.hasNext());
+      while(result.hasNext()){
+      db.close();
       return false;
-      }else
+      }
+      db.close();
       return true;
       
     
@@ -33,7 +36,7 @@ public class ControladorBD {
   } 
   public static void alta(Evento ev){
   //alta
-      ObjectContainer db=Db4o.openFile("EjerEvente");
+     ObjectContainer db=Db4o.openFile("EjerEvente");
       db.store(ev);
       db.close();
       System.out.print("finalizado con exito");
