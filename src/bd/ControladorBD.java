@@ -52,6 +52,7 @@ public class ControladorBD {
      }else{
      System.out.println("Se a producido un error, o no a querido elimanar");
      }
+     db.close();
   }
   
   public static void modificacionEventos(String nombre){
@@ -83,6 +84,7 @@ public class ControladorBD {
          Evento found=(Evento)result.next();
          Listado.add(found);
          }
+         db.close();
          return Listado;
        
     }
