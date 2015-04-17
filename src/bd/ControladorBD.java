@@ -50,6 +50,7 @@ public class ControladorBD {
 
             System.out.println("finalizado con exito");
         } else {
+            
             System.out.println("Se a producido un error, o no a querido elimanar");
         }
         db.close();
