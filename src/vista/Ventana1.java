@@ -6,6 +6,7 @@
 package vista;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -194,7 +195,7 @@ public class Ventana1 extends javax.swing.JFrame {
 
             e.setHoraf(hora_fin.getText());
             e.setAsis((Integer) asistentes.getValue());
-
+            e.setAcuden(new ArrayList());
             // Falta linea de ejecicion
             Controlador.Controlador.añadirEventoBD(e);
         } catch (Exception ex) {

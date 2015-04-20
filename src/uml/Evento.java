@@ -48,6 +48,7 @@ public class Evento {
         this.horai = horai;
         this.horaf = horaf;
         this.asis = asis;
+        
     }
 
     public ArrayList<Persona> getAcuden() {

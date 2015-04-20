@@ -80,8 +80,8 @@ public class Controlador {
     public static String llenarArea(String select) {
         String texto = "El evento tiene la siguinte informacion: \n";
         Evento ev = ControladorBD.listadoRellenar(select);
-        texto = texto + ev.getNombre() + "\n" + ev.getLugar() + "\n" + ev.getHorai() + ""
-                + "\n" + ev.getHoraf() + "\n" + ev.getFecha() + "\n";
+        texto = texto +"Nombre: "+ ev.getNombre() + "\nLugar: " + ev.getLugar() + "\nHora de incio: " + ev.getHorai() + ""
+                + "\nHora de finalizicion: " + ev.getHoraf() + "\nFecha: " + ev.getFecha() +"\nPueden acudir: "+ev.getAsis()  + "\nAsistentes: " + ev.getAcuden().size();
 
         return texto;
     }
