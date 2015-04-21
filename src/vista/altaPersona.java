@@ -7,6 +7,7 @@ package vista;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import uml.Persona;
 
 /**
  *
@@ -206,6 +207,14 @@ public class altaPersona extends javax.swing.JFrame {
     private void altaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_altaActionPerformed
         // TODO add your handling code here:
         try{
+        Persona p = new Persona();
+        p.setDni(dni.getText());
+        p.setApellido1(apelli1.getText());
+        p.setApellido2(apelli2.getText());
+        p.setNombre(nombre.getText());
+        p.setTelefono(tlf.getText());
+        p.setAsiste(new ArrayList());
+        p.setE(null);
         
         
         
